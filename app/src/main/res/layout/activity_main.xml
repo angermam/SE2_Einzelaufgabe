@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:hint="input your MNr"
-        android:text="11774285"/>
+        />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

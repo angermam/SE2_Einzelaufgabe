@@ -79,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void doSth() {
-        SimpleTCPClient s = new SimpleTCPClient("11774285");
+        SimpleTCPClient s = new SimpleTCPClient(mNrInput.getText().toString());
+        Log.d("INFO", "Starting TCPClient Thread");
         s.start();
         try {
             s.join();

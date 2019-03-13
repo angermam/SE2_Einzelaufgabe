@@ -26,16 +26,17 @@ public class SimpleTCPClient extends Thread{
     public void run() {
         try {
             mySocket = new Socket("se2-isys.aau.at", 53212);
-            Log.d("Info: ", Boolean.toString(mySocket.isConnected()));
+            Log.d("Info: ", "Socket connection: " + Boolean.toString(mySocket.isConnected()));
             myOutputStream = new DataOutputStream(mySocket.getOutputStream());
             myInputStream = new BufferedReader(new InputStreamReader(mySocket.getInputStream()));
             if(inputMNr != "") {
+                inputMNr += '\n';
                 myOutputStream.writeBytes(inputMNr);
             }
-            Log.d("negor", "nigayasdeae");
+            Log.d("INFO", "before reading Message");
             returnFromServer =  myInputStream.readLine();
-            Log.d("yoyo", returnFromServer);
-            Log.d("xoxoxox", "nigayasdeae");
+            Log.d("INFO", "return from server: " + returnFromServer);
+
             mySocket.close();
 
         } catch (Exception ex) {
